@@ -1,0 +1,29 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>Powered by <a href="http://iqdb.hanyuu.net/">IQDB</a></h4><br/>
+<br/>
+
+<form method="post" enctype="multipart/form-data" action="http://iqdb.hanyuu.net/">
+<table>
+
+	<tr>
+		<td align="right">Image:</td>
+		<td>
+			<input type="hidden" name="MAX_FILE_SIZE" value="8388608"/>
+			<input name="file" type="file"/>
+		</td>
+	</tr>
+	<tr>
+
+		<td align="right">URL:</td>
+		<td>
+			<input name="url" type="text" style="width:100%"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="Search"/>
+
+		</tr>
+	</tr>
+</table>
+</form>

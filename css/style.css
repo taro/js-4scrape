@@ -1,0 +1,108 @@
+body {
+	background-color: #333333;
+	color: #FFFFEE;
+	font-size: 14px;
+}
+
+div {
+	display: inline;
+}
+
+a {
+	color: #FFFF33;
+	text-decoration: none;
+}
+
+a.clean {
+	color: #FFFFEE;
+	text-decoration: none;
+}
+
+a.email {
+	color: #0011FF;
+	text-decoration: none;
+}
+
+p {
+	text-align: left;
+}
+
+ul {
+	text-align: left;
+}
+
+ol {
+	text-align: left;
+}
+
+form {
+	display: inline;
+}
+
+h1 {
+	display: inline;
+}
+
+h3 { 
+	display: inline;
+}
+
+h4 {
+	display: inline;
+}
+
+img {
+	border: 1px solid black;
+}
+
+small.sig {
+	color: #121212;
+}
+
+table.popular {
+	display: inline-table;
+	border: 1px solid white;
+	margin: 1px;
+}
+
+td.post {
+	background: #444444;
+	max-width: 100%;
+	overflow: auto;
+	text-align: left;
+}
+
+.post_name {
+	color: #229955;
+	font-weight: 800;
+}
+
+.post_trip {
+	color: #228854;
+}
+
+.post_subject {
+	color: #FF0000;
+	font-weight: 800;
+}
+
+#notice {
+	text-align: left;
+	font-size: x-small;
+	max-width: 400px;
+}
+
+.ws_0 {}
+
+.ws_1 {
+	color: #FF0000;
+}
+
+.ws_2 {
+	color: #FF0000;
+}
+
+button {
+	text-align: center;
+	width: 80%;
+}

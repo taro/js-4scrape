@@ -1,0 +1,5 @@
+<div id="when_done" style="display: none">
+	<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+	<h4><span class="num_results"></span> Image(s) Found</h4> <span id="rss"></span><br/>
+</div>
+<div id="content"/>

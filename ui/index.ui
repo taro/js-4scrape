@@ -1,0 +1,44 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>Too Many Wallpapers</h4><br/>
+<small>[ <a href="comments">Comments</a> | <a href="about">About</a> | <a href="meimei">Donate</a> | <a href="fav">Favorites</a> ]</small><br/>
+<div id="notice"></div>
+<br/>
+<form method="get" action="search">
+<input type="hidden" name="ws" value="1"/>
+<input type="hidden" name="ret" value="i"/>
+<input type="text" name="q" id="search_field"/>
+<select name="b" class="board_list">
+<option value="" DEFAULT>All</option>
+<option value="w">Walls</option>
+</select>
+<input type="submit" value="Search"/>
+<a href="index"></a>
+
+</form>
+<br/>
+<br/>
+<form method="get" action="random">
+<input type="hidden" name="ws" value="1"/>
+<input type="hidden" name="as" id="as"/>
+<input type="submit" value="Random!!"/> 
+<select name="b" class="board_list">
+<option value="w" DEFAULT>Walls</option>
+<option value="">All</option>
+</select>
+</form>
+<br/>
+<br/>
+<form method="get" action="advsearch">
+<input type="submit" value="Advanced Search"/>
+</form>
+<br/>
+<br/>
+<form method="get" action="upload">
+<input type="submit" value="Image Search"/>
+</form>
+<br/>
+<br/>
+<form method="get" action="popular">
+<input type="submit" value="Popular"/>
+<br/>
+

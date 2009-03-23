@@ -1,0 +1,64 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>Random and Search Parameters</h4>
+<ul>
+	<li><tt>as</tt> - aspect ratio</li>
+	<li><tt>w</tt> - image width</li>
+	<li><tt>mw</tt> - minimum width (must be used with <tt>as</tt>)</li>
+	<li><tt>h</tt> - image height</li>
+	<li><tt>ws</tt> - nsfw flags<ul>
+		<li><tt>0</tt> - any image</li>
+		<li><tt>1</tt> - no 'NSFW'-flagged images</li>
+		<li><tt>2</tt> - no 'NSFW' or 'sketchy' flagged images</li>
+		<li><tt>8008135</tt> - only flagged images</li>
+	</ul></li>
+	<li><tt>b</tt> - board ID or class<ul>
+		<li><tt>1</tt> - just /w/</li>
+		<li><tt>2</tt> - just /wg/</li>
+		<li><tt>3</tt> - just /hr/</li>
+		<li><tt>w</tt> - just /w/ and /wg/</li>
+	</ul></li>
+	<li><tt>c</tt> - number of results to display (max: 100)</li>
+</ul>
+
+<h4>Search Parameters</h4>
+<ul>
+	<li><tt>q</tt> - query string</li>
+	<li><tt>i_subject</tt> - toggles subject index</li>
+	<li><tt>i_comment</tt> - toggles comment index</li>
+	<li><tt>i_origimg</tt> - toggles filename index</li>
+	<li><tt>i_name</tt> - toggles name index ('anonymous' blocked)</li>
+	<li><tt>i_email</tt> - toggles email index ('sage' blocked)</li>
+	<li><tt>p</tt> - offset to start displaying at</li>
+	<li><tt>ret</tt> - return type<ul>
+		<li><tt>i</tt> - images</li>
+		<li><tt>p</tt> - posts and images</li>
+	</ul></li>
+	<li><tt>fmt</tt> - format to return results in<ul>
+		<li>(empty) - HTML</li>
+		<li><tt>rss</tt> - RSS</li>
+	</ul></li>
+</ul>
+
+<h4>Image Parameters</h4>
+<ul>
+	<li><tt>i</tt> - id of image</li>
+	<li><tt>md5</tt> - md5 of image</li>
+</ul>
+
+<h4>Thread Parameters</h4>
+<ul>
+	<li><tt>t</tt> - post number of OP</li>
+	<li><tt>b</tt> - board id</li>
+</ul>
+
+<h4>Actions</h4>
+<p>Actions are strings passed to the <tt>api</tt> as the <tt>a</tt> argument in the get string. Data is returned as <tt>application/json</tt>.</p>
+<ul>
+	<li><tt>stats</tt> - board data</li>
+	<li><tt>random</tt> - random images</li>
+	<li><tt>search</tt> - search</li>
+	<li><tt>image</tt> - image metadata</li>
+	<li><tt>image_posts</tt> - posts which used the image</li>
+	<li><tt>popular</tt> - popular images</li>
+	<li><tt>thread</tt> - posts in a thread</li>
+</ul>

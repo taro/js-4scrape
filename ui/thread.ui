@@ -1,0 +1,5 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>Lurk More</h4><br/>
+<br/>
+<div id="error"></div>
+<table width="95%" id="content"></table>

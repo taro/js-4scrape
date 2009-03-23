@@ -1,0 +1,12 @@
+<h1><a href="index" class="clean">4scrape</a></h1><br/>
+<h4>Fukkin' Saved</h4><br/>
+<div id="help" style="display: none">
+	<blockquote>
+	<p>This page is to view the images you've marked as 'favorite'. To mark an image as favorite, go to the image page and click the 'Save Favorite' button.</p>
+	<p>Your login token is basically your password for a username-less account (since there's no need to have a username, really). As such, if you give it out other people can modify your favorites list and shit. So don't give it out, and try to make it something that someone else won't put in (ie, mine isn't "hark").</p>
+	<p>I plan to have some additional functionality on this page eventually; basically just to sort your images by their attributes, delete images from your favorite list, and <i>maybe</i> add support for tagging them. I'm still on the fence about that last bit.</p>
+	<p><b>You have yet to favorite any images.</b></p>
+	</blockquote>
+</div>
+<div id="favs"></div>
+<div id="loading"></div>

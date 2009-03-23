@@ -1,0 +1,63 @@
+.ui-dialog {
+	background-color: #121212;
+}
+
+.ui-dialog div {
+	display: block;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	border-bottom: 1px solid #FFFFEE;
+	background: #222222;
+	padding: 0px;
+	height: 28px;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+	cursor: move;
+}
+
+.ui-draggable-disabled .ui-dialog-titlebar {
+	cursor: default;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	width: 16px;
+	height: 16px;
+	position:absolute;
+	top: 6px;
+	right: 7px;
+	display: none;
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+	display: none;
+}
+
+.ui-dialog .ui-dialog-titlebar-close-hover {
+}
+
+.ui-dialog .ui-dialog-title {
+	margin-left: 5px;
+	color: white;
+	font-weight: bold;
+	position: relative;
+	top: 7px;
+	left: 4px;
+}
+
+.ui-dialog .ui-dialog-content {
+	margin: 1.2em;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+	position: absolute;
+	bottom: 8px;
+	right: 12px;
+	width: 100%;
+	text-align: right;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: 6px;
+}

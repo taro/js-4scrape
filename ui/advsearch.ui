@@ -1,0 +1,101 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>More is Less</h4><br/>
+<br/>
+<form method="get" action="search">
+
+<table>
+	<tr>
+		<td align="right" valign="top">Search Text </td>
+		<td>
+			<input type="text" name="q" id="search_field"/>
+			<select name="b">
+				<option value="" selected="selected">All</option>
+				<option value="w">Walls</option>
+				<option value="1">/w/</option>
+
+				<option value="2">/wg/</option>
+				<option value="3">/hr/</option>
+			</select>
+			<br/>
+			<div id="choose_indexes_link"><small><a href="#" onclick="add_indexes()">view indexes</a></small></div>
+		</td>
+	</tr>
+
+	<tr id="choose_indexes_row" style="display: none">
+		<td align="right">Search Indexes</td>
+		<td>
+			<input type="checkbox" name="i_subject" checked="yes"/> Subject<br/>
+			<input type="checkbox" name="i_comment" checked="yes"/> Comment<br/>
+			<input type="checkbox" name="i_origimg" checked="yes"/> Filename<br/>
+			<input type="checkbox" name="i_name"/> Name<br/>
+			<input type="checkbox" name="i_email"/> Email
+		</td>
+	</tr>
+	<tr>
+		<td align="right">Display </td>
+		<td>
+			<select name="ret" id="ret">
+				<option value="i" selected="selected">Only Images</option>
+				<option value="p">Posts and Images</option>
+
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td align="right">Width x Height </td>
+		<td>
+			<select id="op" style="display: none">
+				<option value="">Exactly</option>
+				<option value="m">At least</option>
+			</select>
+			<input type="text" name="w" id="w" style="width:50px"/> x 
+			<input type="text" name="h" id="h" style="width:50px"/>
+
+		</td>
+	</tr>
+	<tr>
+		<td align="right">Aspect Ratio </td>
+		<td>
+			<select name="as" id="as">
+				<option value="" selected="selected">Any</option>
+				<option value="1.33">4:3</option>
+				<option value="1.25">5:4</option>
+				<option value="1.60">8:5</option>
+				<option value="1.77">16:9</option>
+				<option value="1.60">16:10</option>
+				<option value="2.5">Huge</option>
+				<option value="3.2">XBox</option>
+
+		</td>
+	</tr>
+	<tr>
+		<td align="right">Purity mode </td>
+		<td>
+			<select name="ws">
+				<option value="0" selected="selected">Everything</option>
+				<option value="1">No tits</option>
+				<option value="2">No fun</option>
+				<!-- <option value="8008135">PORN ONLY KTHX</option> -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td align="right">Results/Page </td>
+		<td>
+
+			<select name="c">
+				<option value="20" default>20</option>
+				<option value="50">50</option>
+				<option value="100">&gt;9000</option>
+			</select>
+		</td>
+	</tr>
+
+	<tr>
+		<td align="center" colspan="2">
+			<br/>
+			<input type="submit" value="Advanced Search"/>
+		</td>
+	</tr>
+</table>
+</form>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta name="distribution" content="global"/>
+<meta name="language" content="en"/>
+<meta name="description" content="Searchable wallpaper archive which scrapes data and autonomously generates metadata from 4chan."/>
+<meta name="keywords" content="4scrape, wall, wallpaper, archive, 4chan, anime"/>
+<meta name="verify-v1" content="RuIvRox7tJk2c44PbEKym36DN2DP8daI9abhwdxxhLY=" >
+<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0">
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/dialog.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/ui-1.6rc4/ui.core.min.js"></script>
+<script type="text/javascript" src="js/ui-1.6rc4/ui.dialog.min.js"></script>
+<script type="text/javascript" src="js/showdown-0.9.js"></script>
+</head>
+<body>
+<div id="error"></div>
+<div id="login"></div>
+<table width="100%" height="95%"><tr><td valign="center" align="center">
+
+<noscript><span id="nojs">Please enable JavaScript!</span></noscript>
+<span id="main">

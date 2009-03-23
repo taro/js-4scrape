@@ -1,0 +1,65 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>Wallpaper Database</h4>
+<br/>
+
+<blockquote>
+<p>4scrape can simply be described as a searchable wallpaper database, and it strives to be little more than that. It is powered by an image+metadata scraper which pulls images from <a href="http://www.4chan.org">4chan</a>'s <a href="http://zip.4chan.org/w/">/w/</a>, <a href="http://orz.4chan.org/wg/">/wg/</a> and <s><a href="http://orz.4chan.org/hr/">/hr/</a></s> (lol nm took up too muck disk). 4scrape then takes the raw parsed data, does some processing on the images, and indexes everything in a <a href="http://www.postgresql.org/">PostgreSQL 8.3</a> database.</p>
+
+<h4>Other 4chan Scrapers</h4>
+<center>
+	[
+	<a href="http://archive.easymodo.net/cgi-board.pl/a">a</a> / 
+	<a href="http://chan4chan.gagspace.com/fun">b</a> / 
+	<a href="http://archive.easymodo.net/cgi-board.pl/ck">ck</a> /
+	<a href="http://archive.easymodo.net/cgi-board.pl/jp">jp</a> /
+	<a href="http://pornodl.com/">s</a> /
+	<a href="http://archive.easymodo.net/cgi-board.pl/t">t</a> /
+	w /
+	wg
+	]
+</center><br/>
+
+<h4>Technical</h4>
+<p>This version of 4scrape is divided into 3 separate components -- a scraper, which is responsible for pulling the image data off 4chan; an indexer which wraps the database and provides a JSON interface for making queries; and a frontend to display results. Currently, these components each use a different programming language because I haven't gotten around to migrating everything to <a href="http://haskell.org">Haskell</a> yet.</p>
+
+<p>The scrape is written in Python 2.5. It uses the <a href="http://www.pythonware.com/library/pil/handbook/index.htm">Python Image Library</a> to process the images (which means it can't handle interlaced PNGs...). The scraper used to do a lot more stuff (image analysis to find similar and matching images), but it turns out that <a href="http://iqdb.hanyuu.net">IQDB</a> did a much better job, so the scraper simply matches images based on the MD5 of the file data. The scraper not only pulls images, but all the information contained in the posts -- this contextual data allows the images to be searched.</p>
+
+<p>The indexer is a FastCGI binary written in Haskell. Effectively, it acts as a thin wrapper around a PostgreSQL database and provides an API that external applications can query. It's effectively a <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>-based interface which returns <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>-encoded results. It is served by <a href="http://www.lighttpd.net/">Lighttpd</a>.</p>
+
+<p>The frontend is a mash of HTML and <a href="http://jquery.com/">JQuery</a>, which is a really nice library for JavaScript that makes everything fairly painless. The frontend makes queries through the public API and generates pages on the client (which is annoying for <a href="http://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a> purposes, but is needlessly nice to the server.</p>
+
+<p>The entire thing is running in a couple of jails on a <a href="http://www.freebsd.org">FreeBSD 7-RELEASE</a> machine hosted by <a href="http://ovh.com">OVH</a>, along with <a href="http://konachan.com">Konachan</a> and a couple other sites. The machine itself is a bulky quad-core Xeon with 8GB of RAM. It has an <a href="http://oss.oetiker.ch/mrtg/">MRTG</a> instance running <a href="http://taiga.hanyuu.net/mrtg">here</a>. <a href="http://vim.org">Vim</a> is my IDE of choice for development.</p>
+
+<h4>History</h4>
+<p>This is actually the <i>fourth</i> version of 4scrape, which is a partial rewrite of the third version. The third version was a complete rewrite of the second, which was a modified version of the first.</p>
+
+<p>This version differs from v3 in that the front-end was completely rewritten. In all previous versions, the front-end was written in <a href="http://python.org">Python</a> using <a href="http://www.modpython.org/">mod_python</a> on <a href="http://httpd.apache.org/">Apache 2.2</a>. This worked great for awhile, but quickly ran into scalability issues -- Apache sucks balls serving lots of static content, because it uses the same daemons to serve everything. Which means the daemon serving static images is loaded down with a massive Python interpreter and a boatload of other stuff. It quickly chews through RAM.</p>
+
+<p>The other significant difference is that v4 uses PostgreSQL instead of <a href="http://mysql.com">MySQL</a>, because MySQL isn't a real RDBMS. 4scrape didn't use MySQL until v2 -- the original v1 used a <a href="http://sqlite.org">Sqlite3</a> backend (and it didn't even have a frontend).</p>
+
+<p>The project was originally intended as a joke, to see how many posts on /w/ were <i>actually</i> reposts. After the first couple weeks, I concluded that the number lay somewhere between 8 and 15%. After 6 months, over 40% of the images scraped were reposts. Some parties anticipate that the actual value may exceed 100% -- indicating that /w/ actually <i>unproduces</i> original content, a phenomenon known as mootropification.</p>
+
+<p>There were a couple spin-off projects, like an instance of 4scrape which scraped /e/, /h/, /s/, /hc/ and /d/ -- aptly named ``4porn''. My mom found out and she got scared etc.</p>
+
+<h4>Autonomous Metadata Collection</h4>
+<p>One of the design goals when I created the early versions was to have a searchable database of images. Searching raw images is next to impossible; it is made doable only though metadata. Thankfully, the contextual information obtained by the scraper provides a myriad of metadata which can be indexed and searched. Adding to that, the images themselves can be processed, certain qualities extracted, and those qualities made searchable.</p>
+
+<p>This design contrasts heavily with other, larger image repositories such as <a href="http://danbooru.donmai.us/">Danbooru</a>. A common paradigm for image categorization are tagging systems, which allow the end-user to qualify a resource with metadata indexes, which then allow the resouce to be easily referenced and searched (and interesting alternative representations can be formed, like <a href="http://en.wikipedia.org/wiki/Tag_cloud">tag clouds</a>.) </p>
+
+<p>While this solution is fairly simple and simple to implement, it presents several critical shortcomings:</p>
+
+<ol><li>Each image and each image added must be hand-tagged by end-users before it becomes searchable.</li>
+<li>A set of tag conventions must be laid out, and tags must become standardized.</li>
+<li>Tags must be moderated to ensure validity.</li></ol>
+
+<p>The result is that the amount of work required to maintain a repository using a tag-based system scales linearly with the size of the database. When I originally started the project, I didn't expect anyone besides myself to be using it, and I certainly didn't want to have to hand-tag the ~1,200 images that the initial scrape pulled. An autonomous solution is the answer.</p>
+
+<p>Unfortunately, autonomous metadata collection can only go so far -- for certain operations human interaction is an unfortunate requirement. The NSFW flagging system is user-powered, and the integrity of that rests in the hands of the users.</p>
+
+<p>While I don't plan on ever implementing a tagging system, I might get around to implementing a system which analyzes usage patterns to infer image similarities and links on a transactional basis, but that's pretty far off considering all of the work on the core featureset which still needs to be done.</p>
+
+<h4>tl;dr</h4>
+
+<p>desu~</p>
+
+</blockquote>

@@ -1,0 +1,11 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h4>desu desu desu</h4><br/>
+<br/>
+
+<form id="cfrm">
+<textarea cols="60" rows="5" name="m" id="m"></textarea><br/>
+<input type="submit" name="n" value="Post"/>
+</form><br/>
+<br/>
+<div id="loading"></div>
+<div id="comments"></div>

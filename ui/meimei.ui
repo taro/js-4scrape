@@ -1,0 +1,38 @@
+<a href="index" class="clean"><h1>4scrape</h1></a><br/>
+<h3>Donations - Meimei</h3>
+<br/>
+
+<p>Meimei a PHP file which implements a dynamic, distributed mirror. You can drop on your webhost -- the first time the file is accessed, it'll run some tests to see if your system can act as a mirror. If everything's okay, you'll be prompted for some configuration data. When you click "install", it'll tell Suigintou it exists and start serving people's requests.</p>
+<p>Basically, it's a way for people (who have extra webhosting) to donate without having to deal with the implications of money changing hands. It's provided as-is with neither license nor warranty; you accept all implications and liabilities, etc. <small>[<a href="meimei.php">download</a>]</small></p>
+
+<h3>Requirements</h3>
+<ul>
+	<li>Ability to serve files and execute PHP scripts.</li>
+	<li><tt><a href="http://us.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen">allow-url-fopen</a></tt> enabled to fetch remote files (will provide sockets/curl implementations later).</li>
+</ul>
+
+<h3>Setup</h3>
+<ol>
+	<li>Download the file onto a webhost with PHP installed.</li>
+	<li>Point your web browser at the file.</li>
+	<li>The script will then examine your system configuration to see if it can be served. If it encounters something weird, it'll error out and halt the installation.</li>
+	<li>If everything goes well, you'll be presented with a configuration screen with the following settings:<ul>
+		<li><b>Script Location</b>: Where on disk the script is located.</li>
+		<li><b>Cache Directory</b>: The directory to store the image data. <ul>
+			<li>It should be in a directory which is served by the webserver.</li>
+			<li>It should be in a directory writably by the web server, or already exist and be writable.</li>
+		</ul></li>
+		<li><b>Your Email</b>: Won't be given out; just so I can contact you personally (for things like updates, if you disable auto-update, etc).</li>
+		<li><b>Disk (MB)</b>: The maximum amount of disk, in MB, you'll allow Meimei to use for image data.</li>
+		<li><b>Bandwidth (MB)</b>: The maximum amount of bandiwidth per bandwidth period, in MB, Meimei should serve before shutting the node off (<s>note: in this version, it can't turn off all access -- people can still access images directly</s> When the bandwidth limit is exceeded, it drops a .htaccess file into the image directory to block all requests, which works for people running Apache with .htaccess files enabled).</li>
+		<li><b>Bandwidth Cycle</b>: How often the bandwidth counter should reset.</li>
+		<li><b>Auto-Update?</b>: Enables RSA-2048 signed updates from Suigintou's IP address (only available if you have the OpenSSL PHP extension or a working openssl binary on the machine). The updates are encrypted with my private key, and the public key is embedded in the Meimei script. This effectively gives me access to your machine: please do not leave this enabled if you're not comfortable with that. If you disable this, the code which provides this functionality (and the public key and everything) <i>is removed entirely</i> when the script is rewritten.</li>
+	</ul></li>
+	<li>Configure that up, then click the submit button.</li>
+	<li>The script will now rewrite itself. You will be unable to re-access the configuration screen; if you need to change the options, please re-install the script from step 1.</li>
+	<li>The script will ping back to Suigintou to announce it's existence. If the pingback fails, you'll have to start over (since the configuration stuff is all gone).</li>
+	<li>It won't start receiving requests until I check on it and manually allocate an image block for it. I'll send you an email when I turn it on.</li>
+	<li>You can check on the script by running it with <a href="http://desudesudesu.org/meimei.php?stats">?stats</a>.</li>
+</ol>
+<p><b>If you get any errors during installation (or see anything amiss in the code), please leave a note about it in <a href="comments">comments</a> section and I'll look into it. Thanks!</b></p>
+
