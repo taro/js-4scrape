@@ -46,7 +46,11 @@ try{var AdBrite_Iframe=window.top!=window.self?2:1;var AdBrite_Referrer=document
 				</tr>
 				<tr>
 					<td align="right">Local Path:</td>
-					<td><div class="img_path"></div></a></td>
+					<td><div class="img_path"></div></td>
+				</tr>
+				<tr>
+					<td align="right">File Size:</td>
+					<td><div class="img_size"></div></td>
 				</tr>
 				<tr>
 					<td align="right">NSFW:</td>

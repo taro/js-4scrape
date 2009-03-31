@@ -6,6 +6,13 @@ $.getJSON(get_api_url('image'), function(img, _) {
 	$('div.img_h').append(img['img_h']);
 	$('div.img_as').append(img['img_aspect']);
 	$('div.img_path').append(img['img_path']);
+
+	var img_size = Math.round(img['img_size'] / 1024);
+	if (img_size > 1024) img_size = img_size / 1024 + ' MB';
+	else img_size = img_size + ' KB';
+
+	$('div.img_size').append(img_size)
+
 	//$('div.img_full').append('<a href="' + image_base + img['img_path'] + '"><img src="' + image_base + img['img_path'] + '" width="90%" style="max-width: 800px"/></a>' );
 
 	if (img['mirror'] && img['img_nsfw'] == 0) {
