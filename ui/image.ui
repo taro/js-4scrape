@@ -19,14 +19,14 @@ try{var AdBrite_Iframe=window.top!=window.self?2:1;var AdBrite_Referrer=document
 	<tr>
 		<td class="post" align="center">
 			<b>With this image...</b><br/>
-			<button type="button" id="btn_posts">Show Posts</button><br/>
+			<button class="action" type="button" id="btn_posts">Show Posts</button><br/>
 			<!--
-			<button type="button" id="btn_threads">Show images from threads</button><br/>
+			<button class="action" type="button" id="btn_threads">Show images from threads</button><br/>
 			-->
-			<button type="button" id="btn_iqdb">Search IQDB</button><br/>
-			<button type="button" id="btn_fav">Mark Favorite</button><br/>
+			<button class="action" type="button" id="btn_iqdb">Search IQDB</button><br/>
+			<button class="action" type="button" id="btn_fav">Mark Favorite</button><br/>
 			<!--
-			<button type="button" id="btn_queue">Add to Rotator</button><br/>
+			<button class="action" type="button" id="btn_queue">Add to Rotator</button><br/>
 			-->
 		</td>
 		<td class="post">

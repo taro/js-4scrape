@@ -64,7 +64,7 @@ function dump_images(imgs, elem) {
 		var t_w = img['img_w'] * t_ratio;
 		var t_h = img['img_h'] * t_ratio;
 
-		$(elem).append('<a href="image?i=' + img['img_id'] + '"><img src="' + image_base + img['img_thumb'] + '" width="' + t_w + '" height="' + t_h + '" title="' + img['img_w'] + 'x' + img['img_h'] + '"/></a> ' );
+		$(elem).append('<a href="image?i=' + img['img_id'] + '" id="' + img['img_id'] +'" class="img"><img src="' + image_base + img['img_thumb'] + '" width="' + t_w + '" height="' + t_h + '" title="' + img['img_w'] + 'x' + img['img_h'] + '"/></a> ' );
 	}
 }
 

@@ -102,7 +102,17 @@ td.post {
 	color: #FF0000;
 }
 
-button {
+button.action {
 	text-align: center;
 	width: 80%;
+}
+
+.dialog-fav > button {
+	margin: 0px;
+	padding: 0px;
+}
+
+.ui-dialog-overlay {
+	opacity: 0.7;
+	background: black;
 }

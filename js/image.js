@@ -102,7 +102,7 @@ $.getJSON(get_api_url('image'), function(img, _) {
 				'resizable' : false,
 				'position' : 'center',
 				'title' : 'Mark Sketchy?',
-				'dialogClass' : ''
+				'dialogClass' : 'dialog_nsfw'
 			})
 			.show()
 			;
@@ -129,7 +129,7 @@ $.getJSON(get_api_url('image'), function(img, _) {
 				'resizable' : false,
 				'position' : 'center',
 				'title' : 'Mark NSFW?',
-				'dialogClass' : ''
+				'dialogClass' : 'dialog_nsfw'
 			})
 			.show()
 			;
