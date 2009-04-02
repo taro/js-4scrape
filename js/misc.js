@@ -56,7 +56,7 @@ $('#loading').ajaxStop(function() {
 	$(this).empty();
 });
 
-function dump_images(imgs, elem) {
+function dump_images(imgs, elem, extra) {
 	for (i in imgs) {
 		var img = imgs[i];
 		if (img['img_thumb'] == '') continue;
@@ -65,6 +65,11 @@ function dump_images(imgs, elem) {
 		var t_h = img['img_h'] * t_ratio;
 
 		$(elem).append('<a href="image?i=' + img['img_id'] + '" id="' + img['img_id'] +'" class="img"><img src="' + image_base + img['img_thumb'] + '" width="' + t_w + '" height="' + t_h + '" title="' + img['img_w'] + 'x' + img['img_h'] + '"/></a> ' );
+
+		if (extra && Math.floor(Math.random() * (imgs.length - i)) == 0) {
+			$(elem).append('<a href="' + extra['link'] + '"><img src="' + extra['image'] + '" style="background-color: #ded7c7; border: 3px solid blueviolet;"/></a> ');
+			extra = null;
+		}
 	}
 }
 

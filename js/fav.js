@@ -1,6 +1,7 @@
 function show_dialog(img) {
 	var width = document.body.clientWidth * 0.8;
-	var height = width / parseFloat(img['img_aspect']) + 60;
+	if (width > 800) width = 800;
+	var height = width / parseFloat(img['img_aspect']);
 
 	$('#error')
 		.empty()

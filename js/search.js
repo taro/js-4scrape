@@ -27,6 +27,16 @@ function insert_links(fr, lr, nr, rpp) {
 	$('#content').append('<br/>');
 }
 
+var jlist_items = []
+$.getJSON('api', {'a' : 'jlist', 'q' : args['q']}, function(items) {
+	for (var i in items) {
+		var item = items[i];
+		item['image'] = item['description'].replace(/.*img src="([^"]+)".*/, '$1');
+		item['link'] = "http://affiliates.jlist.com/click/2604?url=" + escape(item['guid']);
+		jlist_items.push(item);
+	}
+});
+
 bind_infinite(args, function(data) {
 	var num_results = parseInt(data[0]);
 	$('.num_results').empty().append(num_results);
@@ -48,7 +58,7 @@ bind_infinite(args, function(data) {
 			dump_posts(data[1], $('#content > table:last'), true);
 		}
 		else {
-			dump_images(data[1], $('#content'));
+			dump_images(data[1], $('#content'), jlist_items.shift());
 		}
 
 		if (last_result + 1 >= num_results) {
