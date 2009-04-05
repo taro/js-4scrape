@@ -10,6 +10,7 @@ var query = $(document).attr('location').search;
 if (query) {
 	var rss_feed = 'http://suigintou.desudesudesu.org/4scrape/api?a=search&fmt=rss&' + query.substring(1, query.length);
 	$('#rss').append('-- <a href="' + rss_feed + '">RSS Feed</a>');
+	$('head').append('<link rel="alternate" title="' + query + ' - 4scrape Search" type="application/rss+xml" href="' + rss_feed + '"></link>"');
 }
 
 function insert_links(fr, lr, nr, rpp) {
