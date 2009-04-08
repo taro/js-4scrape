@@ -18,7 +18,7 @@ $.getJSON(get_api_url('image'), function(img, _) {
 	if (img['mirror'] && img['img_nsfw'] == 0) {
 		var full_image_base = img['mirror'] + '?i=';
 	}
-	else if (Math.floor(Math.random() * 40) == 32) {
+	else if (Math.floor(Math.random() * 25) == 7) {
 		var full_image_base = 'http://desudesudesu.org/meimei.php?i=';
 	}
 	else
