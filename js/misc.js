@@ -1,4 +1,5 @@
 var image_base = 'http://suigintou.desudesudesu.org/4scrape/';
+image_base = image_base.replace('http:', document.location.protocol);
 
 var loading_imgs = [
 	'suigintou-blink.gif',
@@ -66,7 +67,7 @@ function dump_images(imgs, elem, extra) {
 
 		$(elem).append('<a href="image?i=' + img['img_id'] + '" id="' + img['img_id'] +'" class="img"><img src="' + image_base + img['img_thumb'] + '" width="' + t_w + '" height="' + t_h + '" title="' + img['img_w'] + 'x' + img['img_h'] + '"/></a> ' );
 
-		if (extra && Math.floor(Math.random() * imgs.length) == 0) {
+		if (extra && Math.floor(Math.random() * (imgs.length - i)) == 0) {
 			$(elem).append('<a href="' + extra['link'] + '"><img src="' + extra['image'] + '" style="background-color: #ded7c7; border: 3px solid blueviolet;"/></a> ');
 			extra = null;
 		}

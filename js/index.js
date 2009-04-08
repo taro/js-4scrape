@@ -3,7 +3,7 @@ $('#loading').remove();
 $('#as').val(screen.width / screen.height);
 $('#search_field').focus();
 
-$.getJSON('http://twitter.com/status/user_timeline/4scrape.json?count=2&callback=?', null, function(data) {
+$.getJSON(document.location.protocol + '//twitter.com/status/user_timeline/4scrape.json?count=2&callback=?', null, function(data) {
 	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 	data = data[0];

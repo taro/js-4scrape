@@ -8,7 +8,7 @@ if (args['q']) args['q'] = args['q'].replace(/\+/g, ' ');
 
 var query = $(document).attr('location').search;
 if (query) {
-	var rss_feed = 'http://suigintou.desudesudesu.org/4scrape/api?a=search&fmt=rss&' + query.substring(1, query.length);
+	var rss_feed = document.location.protocol + '//suigintou.desudesudesu.org/4scrape/api?a=search&fmt=rss&' + query.substring(1, query.length);
 	$('#rss').append('-- <a href="' + rss_feed + '">RSS Feed</a>');
 	$('head').append('<link rel="alternate" title="' + query + ' - 4scrape Search" type="application/rss+xml" href="' + rss_feed + '"></link>"');
 }
@@ -32,8 +32,8 @@ var jlist_items = []
 $.getJSON('api', {'a' : 'jlist', 'q' : args['q']}, function(items) {
 	for (var i in items) {
 		var item = items[i];
-		item['image'] = item['description'].replace(/.*img src="([^"]+)".*/, '$1');
-		item['link'] = "http://affiliates.jlist.com/click/2604?url=" + escape(item['guid']);
+		item['image'] = item['description'].replace(/.*img src="([^"]+)".*/, '$1').replace('http:', document.location.protocol);
+		item['link'] = document.location.protocol + "//affiliates.jlist.com/click/2604?url=" + escape(item['guid']);
 		jlist_items.push(item);
 	}
 });
