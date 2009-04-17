@@ -1,21 +1,16 @@
 <a href="index" class="clean"><h1>4scrape</h1></a><br/>
 <h4>Image #<div class="image_num"></div></h4><br/>
-<div style="display: block; max-width: 90%;" class="ads">
-<script type="text/javascript">
-var AdBrite_Title_Color = 'FFFFEE';
-var AdBrite_Text_Color = 'FFFFEE';
-var AdBrite_Background_Color = '333333';
-var AdBrite_Border_Color = 'FFFFEE';
-var AdBrite_URL_Color = 'FFFF33';
-try{var AdBrite_Iframe=window.top!=window.self?2:1;var AdBrite_Referrer=document.referrer==''?document.location:document.referrer;AdBrite_Referrer=encodeURIComponent(AdBrite_Referrer);}catch(e){var AdBrite_Iframe='';var AdBrite_Referrer='';}
-</script>
-<span style="white-space:nowrap;"><script type="text/javascript">document.write(String.fromCharCode(60,83,67,82,73,80,84));document.write(' src="http://ads.adbrite.com/mb/text_group.php?sid=1031110&zs=3732385f3930&ifr='+AdBrite_Iframe+'&ref='+AdBrite_Referrer+'" type="text/javascript">');document.write(String.fromCharCode(60,47,83,67,82,73,80,84,62));</script>
-<a target="_top" href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=1031110&afsid=1"><img src="http://files.adbrite.com/mb/images/adbrite-your-ad-here-leaderboard.gif" style="background-color:#FFFFEE;border:none;padding:0;margin:0;" alt="Your Ad Here" width="14" height="90" border="0" /></a></span>
-</div><!-- end ad -->
+
+<!-- Start J-List Affiliate Code -->
+<div>
+<a href="http://affiliates.jlist.com/click/2604/102" target="_blank" onmouseover="window.status='Click now to visit J-List!'; return true;" onmouseout="window.status=''; return true;" title="Click now to visit J-List!">
+<img src="http://affiliates.jlist.com/media/2604/102" width="728" height="90" alt="Click now to visit J-List!" border="0"></a><br/>
+</div>
+<!-- End J-List Affiliate Code -->
 
 <div class="img_full"></div>
 <br/>
-<table id="metadata" width="90%" style="max-width: 800px; display: none;">
+<table id="metadata" width="90%" style="max-width: 728px; display: none;">
 	<tr>
 		<td class="post" align="center">
 			<b>With this image...</b><br/>
@@ -24,6 +19,11 @@ try{var AdBrite_Iframe=window.top!=window.self?2:1;var AdBrite_Referrer=document
 			<button class="action" type="button" id="btn_threads">Show images from threads</button><br/>
 			-->
 			<button class="action" type="button" id="btn_iqdb">Search IQDB</button><br/>
+			<form style="display: inline" action="http://tineye.com/search" method="post" id="frm_tineye">
+				<input type="hidden" id="tineye_url" name="url"/>
+				<input type="hidden" name="submit" value="Search"/>
+				<input type="submit" class="action" value="Search TinEye"/>
+			</form><br/>
 			<button class="action" type="button" id="btn_fav">Mark Favorite</button><br/>
 			<!--
 			<button class="action" type="button" id="btn_queue">Add to Rotator</button><br/>

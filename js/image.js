@@ -31,6 +31,7 @@ $.getJSON(get_api_url('image'), function(img, _) {
 	else
 		img['img_preview'] = img['img_thumb'].substring(4).replace('thumb', 'preview');
 
+	$('#tineye_url').val(image_base + 'img/' + img['img_preview']);
 	$('div.img_full').append('<a href="' + full_image_base + img['img_path'] + '"><img src="' + full_image_base + img['img_preview'] + '""/></a>' );
 
 	if (is_iphone()) {

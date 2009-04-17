@@ -102,7 +102,7 @@ td.post {
 	color: #FF0000;
 }
 
-button.action {
+button.action, input.action {
 	text-align: center;
 	width: 80%;
 }
